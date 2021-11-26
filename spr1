@@ -1,0 +1,16 @@
+#dobor obrazu bazowego:
+FROM node:alpine
+#podanie autora pliku:
+LABEL Autor = 'Paulina Sulek'
+#utworzenie katalogu roboczego aplikacji: 
+WORKDIR /usr/app
+#kopiowanie plikow .json:
+COPY package*.json ./
+#instalacja npm:
+RUN npm install
+#kopiowanie innych zrodel:
+COPY ./ ./
+#ustawienie wybranego portu:
+EXPOSE 8080
+#uruchomienie serwera:
+CMD ["node", "serwer.js"]

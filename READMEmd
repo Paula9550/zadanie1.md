@@ -1,0 +1,18 @@
+
+CZĘŚĆ OBOWIĄZKOWA 
+3. Należy podać polecenia niezbędne do: 
+a. zbudowania opracowanego obrazu kontenera:
+docker build -t local/spr1 .
+b. uruchomienia kontenera na podstawie zbudowanego obrazu:
+docker run -d --rm --name SPR -p 5100:8080 local/spr1
+c. sposobu uzyskania informacji, które wygenerował serwer w trakcie uruchamiana kontenera (patrz: punkt 1a):
+docker logs SPR
+d. sprawdzenia, ile warstw posiada zbudowany obraz:
+dokcer image inspect local/spr1 | jq '.[].RootFS'
+4. W ramach tego punktu wszystkie informacje, które trzeba dostarczyć w sprawozdaniu (punkty 1-3) należy opracować w postaci 
+pliku zadanie1.md a ten plik umieścić na koncie GitHub jako zwyczajowy opis zawartości repozytorium git. Na tym repozytorium
+ proszę umieścić też opracowane źródła dla serwera oraz przygotowany plik Dockerfile (oraz wszystkie inne, niezbędne Państwa 
+ zdaniem pliki). Proszę odpowiedzieć na pytanie czy a jeśli tak to w jaki sposób można zbudować obraz wykorzystując bezpośrednia 
+ link do Dockerfile umieszczonego na GitHub oraz jak przenieść stworzony obraz na swoje konto na DockerHub.
+Tak, można zbudować obraz wykorzystując bezpośredni link do Dockerfile umieszczonego na GitHub. Utworzony obraz można przenieść na
+ swoje konto poprzez polecenie: docker push <nazwa_użytkownika_Dockerhub>/<nazwa_repozytorium>:<tag_obrazu>
